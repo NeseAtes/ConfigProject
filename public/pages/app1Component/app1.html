@@ -1,0 +1,94 @@
+<style type="text/css">
+ 
+  li {
+    list-style-type: none;
+   
+  }
+</style>
+
+<div>
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="d-flex align-content-center">
+        <div class="col-sm-9">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active" ng-class="{ active: isSet(1) }"><a ng-click="setTab(1)" data-toggle="tab">Config</a></li>
+              <li ng-class="{ active: isSet(2)}"><a ng-click="setTab(2)" data-toggle="tab">LogConfig</a></li>
+              <li ng-class="{ active: isSet(3)}"><a ng-click="setTab(3)" data-toggle="tab">Version</a></li>
+              <li ng-class="{ active: isSet(4)}"><a ng-click="setTab(4)" data-toggle="tab">LogServer</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="active tab-pane">
+                <br>
+                <div id="nav-config" role="tabpanel" aria-labelledby="nav-config-tab" ng-show="isSet(1)">
+                  <form editable-form name="editableForm" onaftersave="saveUser()">
+                    <pre editable-textarea="configList" e-name="name" onbeforesave="checkName($data)" onaftersave="postConfig(configList)" e-rows="10" e-cols="120" 
+                        e-required>
+                          {{configList}}
+                    </pre>
+                      <div>
+                        <!-- button to show form -->
+                        <button type="button" style="font-weight: bold;" class="btn btn-primary" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+                           Update
+                        </button>
+                        <!-- buttons to submit / cancel form -->
+                        <div ng-show="editableForm.$visible">
+                          <button type="submit" class="btn btn-sm btn-light fa fa-edit" ng-disabled="editableForm.$waiting"></button>
+                          <button type="button" class="btn btn-sm btn-light fa fa-window-close" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+                          </button>
+                        </div>
+                      </div><br>
+                      <button type="button" style="font-weight: bold;" class="btn btn-primary" ng-click="reloadData()">Reload</button>
+                  </form>
+                </div>
+              </div>
+              
+              <div>
+                <div class="tab-pane" id="nav-logConfig" role="tabpanel" aria-labelledby="nav-logConfig-tab" ng-show="isSet(2)">
+                  <form editable-form name="editForm" onaftersave="saveUser()">
+                    <pre editable-textarea="logList" e-name="name" onbeforesave="checkName($data)" onaftersave="postLog(logList)" e-rows="10" e-cols="100" 
+                        e-required>
+                          {{logList}}
+                    </pre>
+                      <div>
+                        <!-- button to show form -->
+                        <button type="button" style="font-weight: bold;" class="btn btn-primary" ng-click="editForm.$show()" ng-show="!editForm.$visible">
+                          Update
+                        </button>
+
+                        <!-- buttons to submit / cancel form -->
+                        <div ng-show="editForm.$visible">
+                          <button type="submit" class="btn btn-sm btn-light fa fa-edit" ng-disabled="editForm.$waiting"></button> 
+                          <button type="button" class="btn btn-sm btn-light fa fa-window-close" ng-disabled="editForm.$waiting" ng-click="editForm.$cancel()">
+                          </button>
+                        </div>
+                      </div><br>
+                      <button type="button" style="font-weight: bold;" class="btn btn-primary" ng-click="reloadData()">Reload</button>
+                  </form>
+                </div>
+              </div>
+              <div>
+                <div class="tab-pane" id="nav-version" role="tabpanel" aria-labelledby="nav-version-tab" ng-show="isSet(3)">
+                  <form editable-form name="editversionForm" onaftersave="saveUser()">
+                    <pre editable-textarea="versionList" e-name="name" e-rows="10" e-cols="100" 
+                        e-required>
+                          {{versionList}}
+                    </pre>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>       
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+
+        
