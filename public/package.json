@@ -1,0 +1,17 @@
+{
+  "name": "configappfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-route": "^1.7.8",
+    "angular-xeditable": "^0.10.0",
+    "ngstorage": "^0.3.11"
+  }
+}
