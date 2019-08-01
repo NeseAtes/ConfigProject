@@ -1,0 +1,65 @@
+{
+    "machines":
+    [
+        {
+            "ip_no":"192.168.1.1",
+            "configs":
+            [
+                {
+                    "appName" : "httpbin",
+                    "configUrl" : "http://httpbin.org",
+                    "configUpdateUrl" : "http://httpbin.org/post",
+                    "configReload" : "http://httpbin.org",
+                    "logUrl" : "http://httpbin.org",
+                    "logUpdateUrl" : "http://httpbin.org/post",
+                    "logReload" : "http://httpbin.org",
+                    "version" : "http://httpbin.org",
+                    "checkStatus" : ""
+                },
+        
+                {
+                    "appName" : "postman",
+                    "configUrl" : "https://postman-echo.com",
+                    "configUpdateUrl" : "https://postman-echo.com/post",
+                    "configReload" : "https://postman-echo.com",
+                    "logUrl" : "https://postman-echo.com",
+                    "logUpdateUrl" : "https://postman-echo.com/post",
+                    "logReload" : "https://postman-echo.com",
+                    "version" : "https://postman-echo.com",
+                    "checkStatus" : ""
+                }
+            ]
+        },
+
+        {
+            "ip_no":"192.168.1.2",
+            "configs":
+            [
+                {
+                    "appName" : "httpbin",
+                    "configUrl" : "http://httpbin.org",
+                    "configUpdateUrl" : "http://httpbin.org/post",
+                    "configReload" : "http://httpbin.org",
+                    "logUrl" : "http://httpbin.org",
+                    "logUpdateUrl" : "http://httpbin.org/post",
+                    "logReload" : "http://httpbin.org",
+                    "version" : "http://httpbin.org",
+                    "checkStatus" : ""
+                },
+        
+                {
+                    "appName" : "postman",
+                    "configUrl" : "https://postman-echo.com",
+                    "configUpdateUrl" : "https://postman-echo.com/post",
+                    "configReload" : "https://postman-echo.com",
+                    "logUrl" : "https://postman-echo.com",
+                    "logUpdateUrl" : "https://postman-echo.com/post",
+                    "logReload" : "https://postman-echo.com",
+                    "version" : "https://www.google.com",
+                    "checkStatus" : ""
+                }
+            ]
+        }
+    ]
+
+}
