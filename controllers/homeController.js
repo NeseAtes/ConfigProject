@@ -194,6 +194,30 @@ var version = function(req,res,next){
         
     }
 };
+
+var checkStatus = function(req,res){
+    var a =global.gconfig.machines;
+    var ipNo = req.query.ipNo;
+    var appname = req.query.appname;
+
+    for (let i = 0; i < a.length; i++) {
+        //console.log("element",a[i]);
+        if (a[i].ip_no == ipNo) {
+            const element = a[i].configs;
+            //console.log("ipNo",element)
+            for (let k = 0; k < element.length; k++) {
+                const veri = element[k];
+                if(veri.appName == appname){
+                    request.get({url: veri.checkStatus},function(error,response, body){
+                        //console.log("body",body);
+                        res.send(body)
+                    });
+                }
+            }
+        }
+    }
+};
+
 module.exports.indexAction = indexAction;
 module.exports.configList = configList;
 module.exports.configPost = configPost;
@@ -203,3 +227,4 @@ module.exports.logPost = logPost;
 module.exports.reloadConfig = reloadConfig;
 module.exports.reloadLog = reloadLog;
 module.exports.version = version;
+module.exports.checkStatus = checkStatus;

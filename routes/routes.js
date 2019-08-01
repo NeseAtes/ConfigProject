@@ -10,4 +10,5 @@ module.exports = function (app) {
     app.post("/config/reload",homeController.reloadConfig);
     app.post("/log/reload",homeController.reloadLog);
     app.post("/version",homeController.version);
+    app.post("/check",homeController.checkStatus);
 }
